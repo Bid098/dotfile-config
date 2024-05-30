@@ -1,2 +1,5 @@
 # arch-config
-my arch configuration
+This is my arch configuration
+- hyprland
+- waybar
+- neovim
