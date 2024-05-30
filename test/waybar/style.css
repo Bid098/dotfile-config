@@ -1,0 +1,170 @@
+* {
+    font-family: JetBrainsMono;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(26, 26, 26, 0.9); /*rgba(121, 121, 121, 0.8);*/
+    /*color: #282828;*/
+    color: rgba(221, 221, 221, 0.8);
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#workspaces button {
+    padding: 0px 8px 0px 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: linear 0.2s background-color;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #282828;
+}
+
+#network {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0 15px;
+}
+
+#clock
+{
+    /*background-color: rgba(255, 255, 255, 0.3);*/
+}
+
+#tray{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#window,
+#workspaces {
+    padding: 2px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+#battery.charging, #battery.plugged {
+    color: green;
+}
+
+@keyframes blink {
+    to {
+        background-color: #282828;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #282828;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px 0px 0px 8px;
+    margin-left: 2px;
+    margin-right: 0px;
+}
+
+#pulseaudio
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 0px 8px 8px 0px;
+    margin-left: 0px;
+    margin-right: 2px;
+}
+
+#battery
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#disk
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 0px 8px 8px 0px;
+    margin-left: 0px;
+    margin-right: 2px;
+}
+
+#memory
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#cpu
+{
+    padding: 0 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px 0px 0px 8px;
+    margin-left: 2px;
+    margin-right: 0px;
+}
