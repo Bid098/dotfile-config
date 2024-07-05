@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="33">
+  <test-suite type="Assembly" id="1-1039" name="PrimeGateApplication-tester.dll" fullname="/home/marco/Documenti/git-b/PrimeGateMosaicoworld/Aws-Lambdas/PrimeGateApplication-tester/bin/Debug/net6.0/PrimeGateApplication-tester.dll" runstate="Runnable" testcasecount="33">
+    <environment framework-version="3.13.3.0" clr-version="8.0.4" os-version="EndeavourOS" platform="Unix" cwd="/home/marco" machine-name="marco-latitude7420" user="marco" user-domain="marco-latitude7420" culture="it-IT" uiculture="it-IT" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="/home/marco" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="12485" />
+      <property name="_APPDOMAIN" value="nunit3-console" />
+    </properties>
+    <test-suite type="TestSuite" id="1-1041" name="PrimeGateApplication_tester" fullname="PrimeGateApplication_tester" runstate="Runnable" testcasecount="11">
+      <test-suite type="TestFixture" id="1-1026" name="AwsElasticacheTester" fullname="PrimeGateApplication_tester.AwsElasticacheTester" classname="PrimeGateApplication_tester.AwsElasticacheTester" runstate="Runnable" testcasecount="2">
+        <test-case id="1-1027" name="Test1GetValues" fullname="PrimeGateApplication_tester.AwsElasticacheTester.Test1GetValues" methodname="Test1GetValues" classname="PrimeGateApplication_tester.AwsElasticacheTester" runstate="Runnable" seed="1237325274" />
+        <test-case id="1-1028" name="Test2UpdateHashValue" fullname="PrimeGateApplication_tester.AwsElasticacheTester.Test2UpdateHashValue" methodname="Test2UpdateHashValue" classname="PrimeGateApplication_tester.AwsElasticacheTester" runstate="Runnable" seed="384066920" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1029" name="Functions" fullname="PrimeGateApplication_tester.Functions" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" testcasecount="9">
+        <test-case id="1-1030" name="Test1Today" fullname="PrimeGateApplication_tester.Functions.Test1Today" methodname="Test1Today" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="663263131" />
+        <test-case id="1-1031" name="Test2Yesterday" fullname="PrimeGateApplication_tester.Functions.Test2Yesterday" methodname="Test2Yesterday" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="1102912520" />
+        <test-case id="1-1032" name="Test3FromYesterday" fullname="PrimeGateApplication_tester.Functions.Test3FromYesterday" methodname="Test3FromYesterday" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="316334431" />
+        <test-case id="1-1033" name="Test4CurrentWeek" fullname="PrimeGateApplication_tester.Functions.Test4CurrentWeek" methodname="Test4CurrentWeek" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="1081097524" />
+        <test-case id="1-1034" name="Test5PastWeek" fullname="PrimeGateApplication_tester.Functions.Test5PastWeek" methodname="Test5PastWeek" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="2063362755" />
+        <test-case id="1-1035" name="Test6FromPastWeek" fullname="PrimeGateApplication_tester.Functions.Test6FromPastWeek" methodname="Test6FromPastWeek" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="1900068400" />
+        <test-case id="1-1036" name="Test7CurrentMonth" fullname="PrimeGateApplication_tester.Functions.Test7CurrentMonth" methodname="Test7CurrentMonth" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="523227558" />
+        <test-case id="1-1037" name="Test8LastMonth" fullname="PrimeGateApplication_tester.Functions.Test8LastMonth" methodname="Test8LastMonth" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="700106853" />
+        <test-case id="1-1038" name="Test9FromLastMonth" fullname="PrimeGateApplication_tester.Functions.Test9FromLastMonth" methodname="Test9FromLastMonth" classname="PrimeGateApplication_tester.Functions" runstate="Runnable" seed="1731685256" />
+      </test-suite>
+    </test-suite>
+    <test-suite type="TestSuite" id="1-1040" name="PrimeGateApplicationTester" fullname="PrimeGateApplicationTester" runstate="Runnable" testcasecount="22">
+      <test-suite type="TestFixture" id="1-1013" name="HTMLFunctionsTester" fullname="PrimeGateApplicationTester.HTMLFunctionsTester" classname="PrimeGateApplicationTester.HTMLFunctionsTester" runstate="Runnable" testcasecount="2">
+        <test-case id="1-1014" name="Test1_Old" fullname="PrimeGateApplicationTester.HTMLFunctionsTester.Test1_Old" methodname="Test1_Old" classname="PrimeGateApplicationTester.HTMLFunctionsTester" runstate="Runnable" seed="530786009" />
+        <test-case id="1-1015" name="Test2_DataloggerValues" fullname="PrimeGateApplicationTester.HTMLFunctionsTester.Test2_DataloggerValues" methodname="Test2_DataloggerValues" classname="PrimeGateApplicationTester.HTMLFunctionsTester" runstate="Runnable" seed="845780167" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1000" name="PrimeGateTester" fullname="PrimeGateApplicationTester.PrimeGateTester" classname="PrimeGateApplicationTester.PrimeGateTester" runstate="Runnable" testcasecount="1">
+        <test-case id="1-1001" name="GetClientKey" fullname="PrimeGateApplicationTester.PrimeGateTester.GetClientKey" methodname="GetClientKey" classname="PrimeGateApplicationTester.PrimeGateTester" runstate="Runnable" seed="249407084" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1016" name="TimeStreamFunctionsTester" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" testcasecount="9">
+        <test-case id="1-1017" name="Test1_WriteSomething" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test1_WriteSomething" methodname="Test1_WriteSomething" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="528672505" />
+        <test-case id="1-1018" name="Test2_EmptyQuery" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test2_EmptyQuery" methodname="Test2_EmptyQuery" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="2028426376" />
+        <test-case id="1-1019" name="Test3_QueryVariablesOnly" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test3_QueryVariablesOnly" methodname="Test3_QueryVariablesOnly" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="2145328172" />
+        <test-case id="1-1020" name="Test4_QueryDevicesOnly" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test4_QueryDevicesOnly" methodname="Test4_QueryDevicesOnly" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="2066620952" />
+        <test-case id="1-1021" name="Test5_QueryVariablesAndDevices" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test5_QueryVariablesAndDevices" methodname="Test5_QueryVariablesAndDevices" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="981905973" />
+        <test-case id="1-1022" name="Test6_WriteSomethingInBuffer" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test6_WriteSomethingInBuffer" methodname="Test6_WriteSomethingInBuffer" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="194748856" />
+        <test-case id="1-1023" name="Test7_GetPeriod" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test7_GetPeriod" methodname="Test7_GetPeriod" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="1402211920" />
+        <test-case id="1-1024" name="Test8_ListTables" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test8_ListTables" methodname="Test8_ListTables" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="232029973" />
+        <test-case id="1-1025" name="Test9_MoveDataToS3" fullname="PrimeGateApplicationTester.TimeStreamFunctionsTester.Test9_MoveDataToS3" methodname="Test9_MoveDataToS3" classname="PrimeGateApplicationTester.TimeStreamFunctionsTester" runstate="Runnable" seed="834797264" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1002" name="XadaTester" fullname="PrimeGateApplicationTester.XadaTester" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" testcasecount="10">
+        <test-case id="1-1003" name="ComposeDataFromRedis" fullname="PrimeGateApplicationTester.XadaTester.ComposeDataFromRedis" methodname="ComposeDataFromRedis" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="839992210" />
+        <test-case id="1-1004" name="ComposeDataFromRedisCarel" fullname="PrimeGateApplicationTester.XadaTester.ComposeDataFromRedisCarel" methodname="ComposeDataFromRedisCarel" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="479090374" />
+        <test-case id="1-1009" name="CustomDecoder" fullname="PrimeGateApplicationTester.XadaTester.CustomDecoder" methodname="CustomDecoder" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="599968064" />
+        <test-case id="1-1011" name="GetClientKey" fullname="PrimeGateApplicationTester.XadaTester.GetClientKey" methodname="GetClientKey" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="1234739034" />
+        <test-case id="1-1012" name="GetEditedValues" fullname="PrimeGateApplicationTester.XadaTester.GetEditedValues" methodname="GetEditedValues" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="1390591365" />
+        <test-case id="1-1008" name="NoTypeVariableSetValueAnyType" fullname="PrimeGateApplicationTester.XadaTester.NoTypeVariableSetValueAnyType" methodname="NoTypeVariableSetValueAnyType" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="1686459763" />
+        <test-case id="1-1005" name="TestGetPostFile" fullname="PrimeGateApplicationTester.XadaTester.TestGetPostFile" methodname="TestGetPostFile" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="87044689" />
+        <test-case id="1-1006" name="TestParsePostFileGatewayXada" fullname="PrimeGateApplicationTester.XadaTester.TestParsePostFileGatewayXada" methodname="TestParsePostFileGatewayXada" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="1234800606" />
+        <test-case id="1-1010" name="TestParsePostFileGatewayXada1" fullname="PrimeGateApplicationTester.XadaTester.TestParsePostFileGatewayXada1" methodname="TestParsePostFileGatewayXada1" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="1780385745" />
+        <test-case id="1-1007" name="TestParsePostWithDefaultValues" fullname="PrimeGateApplicationTester.XadaTester.TestParsePostWithDefaultValues" methodname="TestParsePostWithDefaultValues" classname="PrimeGateApplicationTester.XadaTester" runstate="Runnable" seed="229877119" />
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

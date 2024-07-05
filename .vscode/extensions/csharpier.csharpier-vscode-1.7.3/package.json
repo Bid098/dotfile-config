@@ -1,0 +1,106 @@
+{
+	"name": "csharpier-vscode",
+	"displayName": "CSharpier - Code formatter",
+	"description": "Code formatter using csharpier",
+	"version": "1.7.3",
+	"publisher": "csharpier",
+	"author": "CSharpier",
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=csharpier.csharpier-vscode",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/belav/csharpier.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/belav/csharpier/issues"
+	},
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"keywords": [
+		"prettier",
+		"formatter",
+		"c#",
+		"csharp",
+		"csharpier"
+	],
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:csharp"
+	],
+	"icon": "logo.png",
+	"main": "./build/Extension.js",
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": false,
+			"description": "This extension is only supported in trusted workspaces"
+		}
+	},
+	"contributes": {
+		"configuration": [
+			{
+				"title": "CSharpier",
+				"properties": {
+					"csharpier.enableDebugLogs": {
+						"type": "boolean",
+						"default": false,
+						"description": "Enable debug logs."
+					},
+					"csharpier.dev.customPath": {
+						"type": "string",
+						"default": "",
+						"description": "Path to directory containing dotnet-csharpier - used for testing the extension with new versions of csharpier."
+					},
+					"csharpier.dev.disableCSharpierServer": {
+						"type": "boolean",
+						"default": false,
+						"description": "Disable CSharpier Server."
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build",
+		"actualBuild": "webpack --env NODE_ENV=production",
+		"build": "rimraf build && npm run actualBuild",
+		"start": "rimraf build && webpack --env NODE_ENV=development --watch",
+		"prettier": "prettier ./**/*.{ts,js} --write",
+		"vsix": "vsce package"
+	},
+	"devDependencies": {
+		"@types/glob": "7.1.4",
+		"@types/mocha": "9.0.0",
+		"@types/node": "14.x",
+		"@types/node-fetch": "^2.6.11",
+		"@types/semver": "7.3.9",
+		"@types/vscode": "1.60.0",
+		"prettier": "2.4.1",
+		"rimraf": "3.0.2",
+		"semver": "7.6.0",
+		"ts-loader": "9.2.5",
+		"typescript": "4.4.3",
+		"vsce": "^1.97.0",
+		"webpack": "5.90.1",
+		"webpack-cli": "4.9.1",
+		"xml-js": "1.6.11"
+	},
+	"dependencies": {
+		"node-fetch": "^2.7.0"
+	},
+	"__metadata": {
+		"id": "14f1480a-1193-4742-aaee-dd963cc37f0f",
+		"publisherId": "e3dc3d72-cbed-4166-9771-2a2f4126b4ac",
+		"publisherDisplayName": "csharpier",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1718000550806,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

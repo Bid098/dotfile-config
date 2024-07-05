@@ -1,0 +1,271 @@
+{
+	"name": "nunit-test-runner",
+	"displayName": "NUnit Test Runner",
+	"publisher": "Forms",
+	"description": "Discovering and running NUnit tests",
+	"version": "0.3.0",
+	"icon": "icon.png",
+	"main": "./out/index.js",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MDcod/nunit-runner-vscode-ext"
+	},
+	"engines": {
+		"vscode": "^1.89.0"
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"categories": [
+		"Testing"
+	],
+	"keywords": [
+		"nunit",
+		"test",
+		"explorer",
+		"runner",
+		"c#",
+		"f#",
+		".net",
+		"dotnet",
+		"kontur"
+	],
+	"contributes": {
+		"viewsWelcome": [
+			{
+				"view": "testing",
+				"contents": "Please open the test project and ensure your project compiles.\nSpecify the desired patterns in the extension settings  (nunitTestRunner.projectsPatterns), you can go to them by clicking the button below.\n[Open settings](command:workbench.action.openSettings?%5B%22nunitTestRunner.projectsPatterns%22%5D)"
+			}
+		],
+		"commands": [
+			{
+				"command": "nuninitTestRunner.expandAll",
+				"title": "Expand All Tests",
+				"icon": "$(fold-down)"
+			},
+			{
+				"command": "testing.reRunLastRun",
+				"title": "Repeat Previous Run",
+				"icon": "$(debug-rerun)"
+			},
+			{
+				"command": "testing.reRunFailTests",
+				"title": "Rerun Failed Tests",
+				"icon": "$(run-errors)"
+			},
+			{
+				"command": "nuninitTestRunner.openTestCaseOutput",
+				"title": "Open output for test",
+				"icon": "$(terminal-view-icon)"
+			},
+			{
+				"command": "nuninitTestRunner.openDiscoveryErrors",
+				"title": "Open Discovery Errors"
+			},
+			{
+				"command": "nuninitTestRunner.fake",
+				"title": "fake comand"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "nuninitTestRunner.expandAll",
+					"group": "navigation@17",
+					"when": "view == workbench.view.testing"
+				},
+				{
+					"command": "testing.reRunLastRun",
+					"group": "navigation@12",
+					"when": "view == workbench.view.testing"
+				},
+				{
+					"command": "testing.reRunFailTests",
+					"group": "navigation@13",
+					"when": "view == workbench.view.testing"
+				}
+			],
+			"testing/item/context": [
+				{
+					"command": "nuninitTestRunner.openTestCaseOutput",
+					"group": "inline",
+					"when": "testId in nuninitTestRunner.context.withOutput"
+				},
+				{
+					"command": "nuninitTestRunner.fake",
+					"group": "2_configure"
+				}
+			]
+		},
+		"configuration": {
+			"title": "NUnit Test Runner",
+			"properties": {
+				"nunitTestRunner.discoveryOnStartup": {
+					"order": 0,
+					"type": "boolean",
+					"default": false,
+					"markdownDescription": "Automatic launch of test discovery when VS Code opens. If false, the detection is started manually by the 'testing.refreshTests' command or the 'Refresh Test' button on the Testing view.",
+					"scope": "resource"
+				},
+				"nunitTestRunner.projectsPatterns": {
+					"order": 1,
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [
+						"**/bin/*.Tests.dll"
+					],
+					"markdownDescription": "Wild cards supported. Always use forward-slashes in glob expressions (patterns and ignore option). Use backslashes for escaping characters. A full description of the possible values can be seen in the description of the [fast-glob](https://github.com/mrmlnc/fast-glob#readme) type.",
+					"scope": "resource"
+				},
+				"nunitTestRunner.testsCategory": {
+					"order": 2,
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"projectName": {
+								"type": "string",
+								"description": "Name of csproj or dll with extension"
+							},
+							"categories": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"description": "Categories name for include to tests discovery"
+							}
+						}
+					},
+					"default": [
+						{
+							"projectName": "Foo.dll",
+							"categories": [
+								"IntegrationTests",
+								"FunctionalTests"
+							]
+						}
+					],
+					"markdownDescription": "Tests categories for include to tests discovery.",
+					"scope": "resource"
+				},
+				"nunitTestRunner.fsWatcher.patterns": {
+					"order": 3,
+					"type": "object",
+					"additionalProperties": {
+						"type": [
+							"string",
+							"object"
+						]
+					},
+					"default": {},
+					"markdownDescription": "BaseDirectory \\ Pattern pairs. Changes that will trigger a \"Refresh Tests\".\n\n- Item - Base directory relative to workspace folders,\n\n- Value - A file glob pattern like `*.{ts,js}` that will be matched on paths relative to the base or object with ignore options. All ignore false by default.\n```json\n\n{\n\t\"foo/TestCases\": \"*.json\",\n\t\"../bar/OtherTestData\": \"**/*.txt\",\n\t\"ipsum/lorem\": {\n\t\t\"pattern\": \"**\",\n\t\t\"ignores\": {\n\t\t\t\"ignoreChangeEvents\": true,\n\t\t\t\"ignoreDeleteEvents\": false,\n\t\t\t\"ignoreCreateEvents\": false\n} \n \n```",
+					"scope": "resource"
+				},
+				"nunitTestRunner.fsWatcher.debounceDelay": {
+					"order": 4,
+					"type": "number",
+					"default": 30000,
+					"markdownDescription": "Refresh tests once at the specified interval in milliseconds.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn build-prod",
+		"build": "webpack",
+		"build-prod": "webpack --mode=production",
+		"watch": "webpack --watch",
+		"test": "mocha src\\tests\\NUnitConsole.test.ts --timeout 10000"
+	},
+	"eslintConfig": {
+		"root": true,
+		"parser": "@typescript-eslint/parser",
+		"plugins": [
+			"prettier",
+			"@typescript-eslint"
+		],
+		"parserOptions": {
+			"project": "./tsconfig.json"
+		},
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/recommended",
+			"plugin:@typescript-eslint/recommended-requiring-type-checking",
+			"plugin:prettier/recommended",
+			"prettier",
+			"./.linters/eslint-ts/rules.js"
+		]
+	},
+	"prettier": {
+		"useTabs": false,
+		"printWidth": 120,
+		"semi": true,
+		"endOfLine": "auto",
+		"singleQuote": false,
+		"trailingComma": "es5",
+		"bracketSpacing": true,
+		"bracketSameLine": true,
+		"arrowParens": "avoid",
+		"tabWidth": 4,
+		"overrides": [
+			{
+				"files": [
+					"*.ts",
+					"*.tsx"
+				],
+				"options": {
+					"parser": "babel-ts"
+				}
+			}
+		]
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.20.7",
+		"@babel/core": "^7.20.7",
+		"@babel/eslint-parser": "^7.19.1",
+		"@babel/plugin-proposal-class-properties": "^7.18.6",
+		"@babel/preset-env": "^7.20.2",
+		"@babel/preset-typescript": "^7.18.6",
+		"@babel/register": "^7.18.9",
+		"@types/mocha": "^10.0.1",
+		"@types/vscode": "^1.89.0",
+		"@typescript-eslint/eslint-plugin": "^5.47.1",
+		"@typescript-eslint/parser": "^5.47.1",
+		"babel-loader": "^9.1.0",
+		"eslint": "^8.31.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"mocha": "^10.2.0",
+		"prettier": "^2.8.1",
+		"typescript": "^4.9.4",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	},
+	"dependencies": {
+		"abortcontroller-polyfill": "^1.7.5",
+		"fast-glob": "^3.2.12",
+		"fast-xml-parser": "^4.0.12",
+		"tree-kill": "^1.2.2"
+	},
+	"__metadata": {
+		"id": "b551ff3b-ef13-43f2-8c15-4dd0d85690bd",
+		"publisherId": "23ddf9e9-7450-40f1-8e04-de0e9f8ec013",
+		"publisherDisplayName": "Forms",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1717755533867,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}
