@@ -28,6 +28,7 @@ return {
           "cssls",
           "marksman",
           "html",
+          "taplo"
         },
       })
     end,
@@ -70,6 +71,9 @@ return {
 
       --markdown
       lspconfig.marksman.setup({})
+
+      --toml
+      lspconfig.taplo.setup({})
 
       vim.keymap.set("n", "<F1>", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, {})

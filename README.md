@@ -13,7 +13,7 @@ sudo pacman -S git stow kitty nvim mako waybar btop
 ## ubuntu
 
 ```shell
-sudo apt-get install git stow kitty nvim mako waybar btop
+sudo apt-get install git stow kitty nvim mako waybar btop alacritty tmux
 ```
 
 # Content
@@ -26,4 +26,13 @@ sudo apt-get install git stow kitty nvim mako waybar btop
     - mako
     - nvim
     - waybar
+    - alacritty
+    - tmux
 
+# Installation
+
+```shell
+git clone "this repo" ~/shared-dotfiles
+cd shared-dotfiles
+stow .
+```
